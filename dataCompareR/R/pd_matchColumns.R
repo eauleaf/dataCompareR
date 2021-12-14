@@ -88,10 +88,10 @@ compareNames <- function(colInfoA, colInfoB){
 subsetDataColumns <- function(DFA, DFB, colInfoList){
 
   names(DFA) <- c(trimws(toupper(names(DFA))))
-  subsetDFA <- DFA %>% select_(.dots=colInfoList[["commonCols"]])
+  subsetDFA <- DFA %>% select(.dots=colInfoList[["commonCols"]])
   
   names(DFB) <- c(trimws(toupper(names(DFB))))
-  subsetDFB <- DFB %>% select_(.dots=colInfoList[["commonCols"]])
+  subsetDFB <- DFB %>% select(.dots=colInfoList[["commonCols"]])
   
   matchColOut <- list(subsetDFA,subsetDFB,colInfoList[["colInfoA"]],colInfoList[["colInfoB"]])
   names(matchColOut) <- c("subsetDFA", "subsetDFB", "colInfoA", "colInfoB")

@@ -93,7 +93,7 @@ generateMismatchData <- function(x, dfA, dfB, ...){
       
       # Get all mismatches from the mismatch list
       allMism <- do.call(rbind,x$mismatches)
-      distRows <- select_(allMism, keys) %>% distinct()
+      distRows <- select(allMism, keys) %>% distinct()
       
       # Get diffs by joining
       aMism <- suppressMessages(inner_join(DFA, distRows))
